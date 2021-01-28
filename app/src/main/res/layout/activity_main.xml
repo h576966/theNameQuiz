@@ -7,11 +7,12 @@
     android:background="@drawable/quizbg"
     tools:context=".MainActivity">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonQuiz"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF85ECDC"
         android:gravity="center_horizontal"
         android:text="@string/quiz"
         android:textSize="18sp"
@@ -22,10 +23,11 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonDatabase"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FF85ECDC"
         android:gravity="center_horizontal"
         android:text="@string/database"
         android:textSize="18sp"
@@ -37,11 +39,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAdd"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:backgroundTint="#85ECDC"
         android:gravity="center_horizontal"
         android:text="@string/add"
         android:textSize="18sp"
