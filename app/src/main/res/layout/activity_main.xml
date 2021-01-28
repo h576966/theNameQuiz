@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/buttonQuiz"
-        android:layout_width="170dp"
+        android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/buttonDatabase"
-        android:layout_width="170dp"
+        android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/database"
@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_width="170dp"
+        android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"

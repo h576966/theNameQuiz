@@ -3,6 +3,7 @@ package com.example.thenamequiz
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import com.example.thenamequiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,13 @@ class MainActivity : AppCompatActivity() {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.buttonQuiz.setOnClickListener(this)
     }
+}
+
+private fun View.setOnClickListener(mainActivity: MainActivity) {
+
 }
 
 
