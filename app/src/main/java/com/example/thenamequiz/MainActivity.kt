@@ -1,5 +1,6 @@
 package com.example.thenamequiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,13 +15,23 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonQuiz.setOnClickListener(this)
+        binding.buttonQuiz.setOnClickListener{
+            val intent = Intent(this, QuizActivity::class.java)
+            startActivity(intent)
+        }
+        binding.buttonDatabase.setOnClickListener{
+            val intent = Intent(this, DatabaseActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonAdd.setOnClickListener{
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 
-private fun View.setOnClickListener(mainActivity: MainActivity) {
-
-}
 
 
 /*
