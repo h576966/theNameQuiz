@@ -17,11 +17,15 @@ class DatabaseActivity : AppCompatActivity() {
 
         //val photoList = binding.photoList<RecyclerView>
 
-        layoutManager = GridLayoutManager(this,2)
+        binding.photoList.apply {
+            layoutManager = GridLayoutManager(this@DatabaseActivity, 2)
+            adapter = PersonAdapter(arrayListOf(""))
+
+        }
+
         binding.photoList.layoutManager = layoutManager
 
 
-        adapter = PersonAdapter(arrayListOf("@drawable/peter"))
         binding.photoList.adapter = adapter
 
     }
