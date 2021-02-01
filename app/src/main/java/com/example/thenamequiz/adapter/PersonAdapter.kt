@@ -13,7 +13,7 @@ import java.util.*
 
 
 //class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
-class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+abstract class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
 
 var persons: List<Person>()
     lateinit var context: Context
@@ -29,7 +29,7 @@ var persons: List<Person>()
 
     }
 
-    fun PersonAdapter(persons: List<Person>) {
+    fun PersonAdapter(persons: List<Person>): PersonAdapter? {
         this.persons = persons
     }
 

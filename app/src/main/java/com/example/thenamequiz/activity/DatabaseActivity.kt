@@ -33,6 +33,8 @@ class DatabaseActivity : AppCompatActivity() {
 
         // Create recycleView-adapter and send the questions as input.
         if (PersonList != null) {
+            val PersonList = PersonList(this)
+
             adapter = PersonAdapter(PersonList.getPersonList())
         }
 
