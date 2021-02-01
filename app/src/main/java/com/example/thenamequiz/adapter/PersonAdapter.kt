@@ -11,11 +11,11 @@ import com.example.thenamequiz.model.Person
 
 
 class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
-    private var questions: List<Person>? = null
+    private var persons: List<Person>? = null
     private var context: Context? = null
 
-    fun PersonAdapter(questions: List<Person>?) {
-        this.questions = questions
+    fun PersonAdapter(persons: List<Person>?) {
+        this.persons = persons
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonAdapter.ViewHolder? {
@@ -26,11 +26,11 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: PersonAdapter.ViewHolder, position: Int) {
        // holder.campus.setText(questions!![position].getCampus().toString())
-        holder.imageView.setImageBitmap(questions!![position].getImage())
+        holder.imageView.setImageBitmap(persons!![position].getImage())
     }
 
     override fun getItemCount(): Int {
-        return questions!!.size
+        return persons!!.size
     }
 
     public class ViewHolder : RecyclerView.ViewHolder {
