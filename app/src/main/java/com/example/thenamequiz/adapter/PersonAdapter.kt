@@ -15,8 +15,8 @@ import java.util.*
 //class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
 abstract class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
 
-var persons: List<Person>()
-    lateinit var context: Context
+lateinit var persons: ArrayList<Person>
+lateinit var context: Context
 
    /*inner class PersonViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val photoView: ImageView = view.photo
@@ -29,7 +29,7 @@ var persons: List<Person>()
 
     }
 
-    fun PersonAdapter(persons: List<Person>): PersonAdapter? {
+    fun PersonAdapter(persons: ArrayList<Person>): PersonAdapter? {
         this.persons = persons
     }
 
