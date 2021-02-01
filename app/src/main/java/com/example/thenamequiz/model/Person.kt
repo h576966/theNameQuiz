@@ -3,7 +3,7 @@ package com.example.thenamequiz.model
 import android.graphics.Bitmap
 
 
-class Person {
+class Person(s: String, decodeResource: Bitmap, hassan: Int) {
 
     private var name: String? = null
     private var image: Bitmap? = null

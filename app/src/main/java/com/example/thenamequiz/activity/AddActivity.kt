@@ -3,9 +3,7 @@ package com.example.thenamequiz.activity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.thenamequiz.R
 import com.example.thenamequiz.databinding.ActivityAddBinding
-import com.example.thenamequiz.databinding.ActivityMainBinding
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.Shared
 
