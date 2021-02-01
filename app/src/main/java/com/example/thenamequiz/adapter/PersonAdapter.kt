@@ -7,38 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.model.Person
 import java.util.*
 
 
 //class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
-abstract class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+    lateinit var persons: ArrayList<Person>
+    lateinit var context: Context
 
-lateinit var persons: ArrayList<Person>
-lateinit var context: Context
 
-   /*inner class PersonViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val photoView: ImageView = view.photo
-        val nameView: TextView = view.name
-        lateinit var person: Person
-
-        override fun toString(): String {
-            return super.toString() + " '" + nameView.text + "'"
-        }*/
-
-    }
 
     fun PersonAdapter(persons: ArrayList<Person>): PersonAdapter? {
         this.persons = persons
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
+    override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): ViewHolder {
       val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_list_item, parent, false)
 
        // val view: View = LayoutInflater.from(parent.context).inflate(R.layout.person_view, parent, false)
        // context = parent.context
-        return PersonViewHolder(view)
+        return ViewHolder() //view
     }
 
     override fun onBindViewHolder(holder: PersonAdapter.ViewHolder, position: Int) {

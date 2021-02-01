@@ -2,11 +2,11 @@ package com.example.thenamequiz.model
 
 import android.app.Application
 import android.graphics.Bitmap
-import com.example.thenamequiz.activity.DatabaseActivity
+import com.example.thenamequiz.activity.AddActivity
 import java.util.ArrayList;
 
 
-class PersonList(addActivity: DatabaseActivity) : Application() {
+class PersonList(addActivity: AddActivity) : Application() {
 
 
    //ny
