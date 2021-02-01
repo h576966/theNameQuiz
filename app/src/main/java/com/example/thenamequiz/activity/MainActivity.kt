@@ -1,10 +1,8 @@
-package com.example.thenamequiz
+package com.example.thenamequiz.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import com.example.thenamequiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
