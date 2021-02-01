@@ -34,7 +34,7 @@ class QuizActivity : AppCompatActivity() {
 
         // Get image- and playScore-View.
         playImage = findViewById(R.id.playImage);
-        playScore = findViewById(R.id.playScore);
+        playScore = findViewById(R.id.quizScore);
 
         // Get back-button and configure onclick to end current activity.
         Button backBtn = findViewById(R.id.playBackBtn);
