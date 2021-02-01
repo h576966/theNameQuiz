@@ -16,10 +16,18 @@ class Shared : Application() {
         PersonList = ArrayList<Person>()
     }
 
-    fun addPerson(name: String?, image: Bitmap?) {
-        val person = Person("hassan", BitmapFactory.decodeFile(resources.toString()), R.drawable.hassan)
-        PersonList!!.add(person)
+    fun addPersons(name: String?, image: Bitmap?) {
+        val hassan = Person("hassan", BitmapFactory.decodeFile(resources.toString()), R.drawable.hassan)
+        val peter = Person("peter", BitmapFactory.decodeFile(resources.toString()), R.drawable.peter)
+        val sivert = Person("sivert", BitmapFactory.decodeFile(resources.toString()), R.drawable.sivert)
+
+        PersonList!!.add(hassan)
+        PersonList!!.add(peter)
+        PersonList!!.add(sivert)
     }
+    //fun addPerson(question: Person?) {
+    //    this.persons?.add(Person())
+   // }
 
     fun getPersonList(): ArrayList<Person>? {
         return PersonList

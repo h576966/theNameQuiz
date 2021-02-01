@@ -7,10 +7,9 @@
     tools:context=".activity.QuizActivity">
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="566dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/playBackBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,25 +29,19 @@
             android:id="@+id/quizImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:contentDescription="Enter name:"
+            android:contentDescription="@string/enter_name"
             tools:srcCompat="@tools:sample/avatars" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/namePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/enter_name"
+            android:importantForAccessibility="no"
+            android:importantForAutofill="no"
             android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/playBackBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="@string/attende"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 
 

@@ -1,48 +1,87 @@
 package com.example.thenamequiz.activity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
+import com.example.thenamequiz.databinding.ActivityQuizBinding
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.Shared
+import java.net.PasswordAuthentication
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class QuizActivity : AppCompatActivity() {
-    private val playImage: ImageView? = null
+    private var quizImage: ImageView? = null
     private var shared: Shared? = null
-    private val currentQuestion: Person? = null
-    private val score = 0
-    private val quizScore: TextView? = null
-    private val currentQuiz: ArrayList<Person>? = null
-
+    private var currentPerson: Person? = null
+    private var score = 0
+    private var quizScore: TextView? = null
+    private var currentQuiz: ArrayList<Person>? = null
+    lateinit var namePassword: PasswordAuthentication
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz)
-
+        val binding = ActivityQuizBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Get sharedObject.
         shared = applicationContext as Shared
 
 
-        // Get and configure radiogroup.
-        RadioGroup radioGroup = findViewById(R.id.radioGroupPlay);
-        radioGroup.clearCheck();
-        radioGroup.setOnCheckedChangeListener(radioListener);
-
         // Get image- and playScore-View.
-        playImage = findViewById(R.id.playImage);
-        playScore = findViewById(R.id.quizScore);
+        quizImage = binding.quizImage
+        quizScore = binding.quizScore
+
 
         // Get back-button and configure onclick to end current activity.
-        Button backBtn = findViewById(R.id.playBackBtn);
-        backBtn.setOnClickListener(v -> {
-            finish();
-        });
+
         startQuiz();
 
     }
+
+    private fun startQuiz() {
+        // Get random question and set bitmap
+        currentPerson = getRandomPerson()
+        quizScore?.setBackgroundColor(Color.WHITE)
+        score = 0
+        quizScore?.setText("Score: $score")
+        if (currentPerson != null) {
+            quizImage?.setImageBitmap(currentPerson!!.getImage())
+        }
+    }
+
+    private fun getRandomPerson(): Person? {
+        if (currentQuiz == null) {
+            currentQuiz = ArrayList(Shared.getPersonList)
+        }
+        var person: Person? = null
+        if (currentQuiz!!.size > 1) {
+            val random = Random()
+            val nextPerson: Int = random.nextInt(currentQuiz!!.size - 1)
+            person = currentQuiz!![nextPerson]
+            currentQuiz!!.removeAt(nextPerson)
+        } else if (currentQuiz!!.size == 1) {
+            person = currentQuiz!![0]
+            currentQuiz!!.removeAt(0)
+        } else {
+            currentQuiz = null
+            showAlertQuizIsDone()
+        }
+        return person
+    }
+
+    fun showAlertQuizIsDone() {
+        AlertDialog.Builder(this)
+                .setMessage("Your score is: " + score )
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                /*.setNeutralButton("Reset", (dialog, which) -> startQuiz())
+        .setNegativeButton("OK", (dialog, which) -> finish())
+        .show();*/
+
     }
 }
