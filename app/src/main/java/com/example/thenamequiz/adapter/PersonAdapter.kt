@@ -5,27 +5,31 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.model.Person
 import java.util.*
 
 
-class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
-    private var persons: List<Person>? = null
-    private var context: Context? = null
+//class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+class PersonAdapter internal constructor() : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
 
-   /* inner class PersonViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+var persons: List<Person>()
+    lateinit var context: Context
+
+   /*inner class PersonViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val photoView: ImageView = view.photo
         val nameView: TextView = view.name
         lateinit var person: Person
 
         override fun toString(): String {
             return super.toString() + " '" + nameView.text + "'"
-        }
+        }*/
 
-    }*/
+    }
 
-    fun PersonAdapter(persons: List<Person>?) {
+    fun PersonAdapter(persons: List<Person>) {
         this.persons = persons
     }
 

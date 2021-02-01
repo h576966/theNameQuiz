@@ -6,11 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.databinding.ActivityAddBinding
 
-import android.content.Context;
-import android.net.Uri;
-import android.view.Gravity;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 
@@ -24,8 +19,6 @@ import java.util.ArrayList;
 
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
-import com.example.thenamequiz.R
-import android.widget.*
 
 
 class AddActivity : AppCompatActivity() {
@@ -43,8 +36,8 @@ class AddActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         iv = binding.imageView
-
-        personList =  PersonList.  // Get the full list from data structure
+        val PersonList = PersonList(this)
+        personList =  PersonList.getPersonList()  // Get the full list from data structure
 
         binding.imageBtn.setOnClickListener {
             val shareIntent = Intent()
@@ -74,7 +67,7 @@ class AddActivity : AppCompatActivity() {
                 var added = false
 
                 if (!name.equals("")&& image != null){
-                    PersonList.addPerson(name, image)
+                    PersonList.addPerson(name!!, image!!)
                     added = true
                     text = "Picture was added"
                 }else { text = "Add text or image" }

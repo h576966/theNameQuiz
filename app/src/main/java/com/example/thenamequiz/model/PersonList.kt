@@ -1,16 +1,13 @@
 package com.example.thenamequiz.model
 
+import android.app.Application
 import android.graphics.Bitmap
-import com.example.thenamequiz.R
-import java.util.*
-import android.net.Uri;
-import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
-import java.lang.reflect.Array;
+import com.example.thenamequiz.activity.AddActivity
 import java.util.ArrayList;
 
 
-class PersonList  {
+class PersonList(addActivity: AddActivity) : Application() {
+
 
    //ny
    private var personList: ArrayList<Person>? = null
@@ -28,7 +25,7 @@ class PersonList  {
     //    this.persons?.add(Person())
    // }
 
-    fun getPersonList(): ArrayList<Person>? {
+    public fun getPersonList(): ArrayList<Person>?  {
         return personList
     }
 
