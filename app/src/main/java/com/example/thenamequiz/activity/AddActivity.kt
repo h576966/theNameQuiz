@@ -6,14 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.databinding.ActivityAddBinding
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.provider.MediaStore;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.Toast;
 
@@ -22,15 +16,8 @@ import java.util.ArrayList;
 
 
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.Shared
-import com.example.thenamequiz.R
-import android.content.Context;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.view.Gravity;
-import android.view.View;
+import com.example.thenamequiz.model.PersonList
 import android.widget.*
-import java.io.IOException
 
 
 class AddActivity : AppCompatActivity() {
@@ -49,7 +36,7 @@ class AddActivity : AppCompatActivity() {
 
         iv = binding.imageView
 
-        personList = Shared.getPersonList(); // Get the full list from data structure
+        personList = PersonList.getPersonList(); // Get the full list from data structure
 
         binding.imageBtn.setOnClickListener {
             val shareIntent = Intent()

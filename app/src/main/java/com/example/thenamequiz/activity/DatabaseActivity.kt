@@ -8,20 +8,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.adapter.PersonAdapter
 import com.example.thenamequiz.databinding.ActivityDatabaseBinding
-import com.example.thenamequiz.model.Shared
+import com.example.thenamequiz.model.PersonList
 
 
 class DatabaseActivity : AppCompatActivity() {
     private var recyclerView: RecyclerView? = null
     private var adapter: PersonAdapter? = null
-    private val Shared: Shared? = null
+    private val PersonList: PersonList? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityDatabaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val shared = applicationContext as Shared
+        val shared = applicationContext as PersonList
 
         recyclerView = binding.personList
         //addButton = binding.addbutton
@@ -32,8 +32,8 @@ class DatabaseActivity : AppCompatActivity() {
         }
 
         // Create recycleView-adapter and send the questions as input.
-        if (Shared != null) {
-            adapter = PersonAdapter(Shared.getPersons())
+        if (PersonList != null) {
+            adapter = PersonAdapter(PersonList.getPersonList())
         }
 
         binding.addbutton1.setOnClickListener{

@@ -5,7 +5,7 @@ import com.example.thenamequiz.R
 import java.util.*
 
 
-class Shared  {
+class PersonList  {
 
    //ny
    private var personList: ArrayList<Person>? = null

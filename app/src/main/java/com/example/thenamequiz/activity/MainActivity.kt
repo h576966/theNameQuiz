@@ -2,11 +2,8 @@ package com.example.thenamequiz.activity
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.thenamequiz.R
 import com.example.thenamequiz.databinding.ActivityMainBinding
-import com.example.thenamequiz.model.Shared
 
 
 class MainActivity : AppCompatActivity() {

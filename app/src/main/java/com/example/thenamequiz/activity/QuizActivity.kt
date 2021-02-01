@@ -6,10 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.thenamequiz.R
 import com.example.thenamequiz.databinding.ActivityQuizBinding
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.Shared
+import com.example.thenamequiz.model.PersonList
 import java.net.PasswordAuthentication
 import java.util.*
 import kotlin.collections.ArrayList
@@ -17,7 +16,7 @@ import kotlin.collections.ArrayList
 
 class QuizActivity : AppCompatActivity() {
     private var quizImage: ImageView? = null
-    private var shared: Shared? = null
+    private var personList: PersonList? = null
     private var currentPerson: Person? = null
     private var score = 0
     private var quizScore: TextView? = null
@@ -30,7 +29,7 @@ class QuizActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Get sharedObject.
-        shared = applicationContext as Shared
+        personList = applicationContext as PersonList
 
 
         // Get image- and playScore-View.
@@ -57,7 +56,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun getRandomPerson(): Person? {
         if (currentQuiz == null) {
-            currentQuiz = ArrayList(Shared.getPersonList)
+            currentQuiz = ArrayList(PersonList.getPersonList)
         }
         var person: Person? = null
         if (currentQuiz!!.size > 1) {
