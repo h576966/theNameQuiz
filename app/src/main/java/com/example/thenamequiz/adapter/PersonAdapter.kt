@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.thenamequiz.model.Person
+import java.util.ArrayList
 
 
-class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+class PersonAdapter(persons: ArrayList<Person>?) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
     private var persons: List<Person>? = null
     private var context: Context? = null
 
