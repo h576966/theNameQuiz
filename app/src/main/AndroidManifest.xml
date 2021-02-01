@@ -14,7 +14,6 @@
             android:label="@string/title_activity_add"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/Theme.TheNameQuiz.NoActionBar"></activity>
-        <activity android:name=".PersonDetailsActivity" />
         <activity
             android:name=".activity.DatabaseActivity"
             android:label="Database"
