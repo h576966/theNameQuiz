@@ -19,7 +19,7 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonAdapter.ViewHolder? {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.dataset_view, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.person_view, parent, false)
         context = parent.context
         return ViewHolder(view)
     }
