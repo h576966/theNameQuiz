@@ -1,9 +1,13 @@
 package com.example.thenamequiz.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.example.thenamequiz.R
 import com.example.thenamequiz.databinding.ActivityMainBinding
+import com.example.thenamequiz.model.Shared
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +16,12 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+       // val shared = applicationContext as Shared
+
         binding.buttonQuiz.setOnClickListener{
             val intent = Intent(this, QuizActivity::class.java)
             startActivity(intent)
+
         }
         binding.buttonDatabase.setOnClickListener{
             val intent = Intent(this, DatabaseActivity::class.java)
@@ -25,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+
 
     }
 }

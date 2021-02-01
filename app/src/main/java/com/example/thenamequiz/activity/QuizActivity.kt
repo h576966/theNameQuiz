@@ -25,5 +25,24 @@ class QuizActivity : AppCompatActivity() {
 
         // Get sharedObject.
         shared = applicationContext as Shared
+
+
+        // Get and configure radiogroup.
+        RadioGroup radioGroup = findViewById(R.id.radioGroupPlay);
+        radioGroup.clearCheck();
+        radioGroup.setOnCheckedChangeListener(radioListener);
+
+        // Get image- and playScore-View.
+        playImage = findViewById(R.id.playImage);
+        playScore = findViewById(R.id.playScore);
+
+        // Get back-button and configure onclick to end current activity.
+        Button backBtn = findViewById(R.id.playBackBtn);
+        backBtn.setOnClickListener(v -> {
+            finish();
+        });
+        startQuiz();
+
+    }
     }
 }
