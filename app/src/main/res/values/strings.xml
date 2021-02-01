@@ -16,4 +16,5 @@
     <string name="peter_simonsen">Peter Simonsen</string>
     <string name="button">Button</string>
     <string name="textview2">TextView</string>
+    <string name="add_person">add_person</string>
 </resources>
