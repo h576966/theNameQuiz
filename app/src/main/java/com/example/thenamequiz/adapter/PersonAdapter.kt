@@ -18,7 +18,7 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
         this.persons = persons
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonAdapter.ViewHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.person_view, parent, false)
         context = parent.context
         return ViewHolder(view)
@@ -38,7 +38,7 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
 
         fun ViewHolder(itemView: View) {
             super(itemView)
-            imageView = itemView.findViewById<View>(R.id.databaseQuestionImage)
+            imageView = itemView.findViewById<View>(R.id.personQuestionImage)
         }
 
 
