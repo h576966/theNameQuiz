@@ -3,14 +3,15 @@ package com.example.thenamequiz.model
 import android.graphics.Bitmap
 
 
-class Person(s: String, decodeResource: Bitmap, hassan: Int) {
+class Person(name: String, image: Bitmap) {
 
     private var name: String? = null
     private var image: Bitmap? = null
 
-    fun Person(name: String?, img: Bitmap) {
+
+    fun Person(name: String?, image: Bitmap?) {
         this.name = name
-        this.image = img
+        this.image = image
     }
 
     fun getName(): String? {
@@ -19,6 +20,14 @@ class Person(s: String, decodeResource: Bitmap, hassan: Int) {
 
     fun getImage(): Bitmap? {
         return image
+    }
+
+    fun setName(name: String?) {
+        this.name = name
+    }
+
+    fun setImage(image: Bitmap?) {
+        this.image = image
     }
 
 

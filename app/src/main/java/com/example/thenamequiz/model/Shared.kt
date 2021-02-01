@@ -1,40 +1,33 @@
 package com.example.thenamequiz.model
 
-import android.app.Application
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import com.example.thenamequiz.R
 import java.util.*
 
 
-class Shared : Application() {
+class Shared  {
 
    //ny
-   private var PersonList: ArrayList<Person>? = null
+   private var personList: ArrayList<Person>? = null
 
-    fun PersonList() {
-        PersonList = ArrayList<Person>()
+    fun Shared() {
+        personList = ArrayList<Person>()
     }
 
-    fun addPersons(name: String?, image: Bitmap?) {
-        val hassan = Person("hassan", BitmapFactory.decodeFile(resources.toString()), R.drawable.hassan)
-        val peter = Person("peter", BitmapFactory.decodeFile(resources.toString()), R.drawable.peter)
-        val sivert = Person("sivert", BitmapFactory.decodeFile(resources.toString()), R.drawable.sivert)
-
-        PersonList!!.add(hassan)
-        PersonList!!.add(peter)
-        PersonList!!.add(sivert)
+    fun addPerson(name:String, image:Bitmap) {
+        val person = Person(name, image)
+        personList?.add(person)
     }
     //fun addPerson(question: Person?) {
     //    this.persons?.add(Person())
    // }
 
     fun getPersonList(): ArrayList<Person>? {
-        return PersonList
+        return personList
     }
 
     fun setPersonList(PersonList: ArrayList<Person>?) {
-        this.PersonList = PersonList
+        this.personList = PersonList
     }
 
 
