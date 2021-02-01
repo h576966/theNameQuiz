@@ -3,6 +3,11 @@ package com.example.thenamequiz.model
 import android.graphics.Bitmap
 import com.example.thenamequiz.R
 import java.util.*
+import android.net.Uri;
+import com.example.thenamequiz.model.Person
+import com.example.thenamequiz.model.PersonList
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 class PersonList  {
@@ -10,12 +15,13 @@ class PersonList  {
    //ny
    private var personList: ArrayList<Person>? = null
 
-    fun Shared() {
+    fun PersonList() {
         personList = ArrayList<Person>()
     }
 
     fun addPerson(name:String, image:Bitmap) {
-        val person = Person(name, image)
+        var person = Person(name, image)
+
         personList?.add(person)
     }
     //fun addPerson(question: Person?) {

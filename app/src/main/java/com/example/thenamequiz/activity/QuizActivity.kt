@@ -56,7 +56,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun getRandomPerson(): Person? {
         if (currentQuiz == null) {
-            currentQuiz = ArrayList(PersonList.getPersonList)
+            currentQuiz = ArrayList(PersonList.getPersonList())
         }
         var person: Person? = null
         if (currentQuiz!!.size > 1) {

@@ -6,6 +6,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.databinding.ActivityAddBinding
 
+import android.content.Context;
+import android.net.Uri;
+import android.view.Gravity;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+
 import android.provider.MediaStore;
 import android.view.View;
 
@@ -14,9 +22,9 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
+import com.example.thenamequiz.R
 import android.widget.*
 
 
@@ -36,7 +44,7 @@ class AddActivity : AppCompatActivity() {
 
         iv = binding.imageView
 
-        personList = PersonList.getPersonList(); // Get the full list from data structure
+        personList =  PersonList.  // Get the full list from data structure
 
         binding.imageBtn.setOnClickListener {
             val shareIntent = Intent()
@@ -91,7 +99,7 @@ class AddActivity : AppCompatActivity() {
             when(requestCode) {
 
                 PICK_IMAGE_REQUEST-> if (resultCode == RESULT_OK){
-                val selectedImage = data.getData()
+                val selectedImage = data?.getData()
                 try{
                     val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedImage)
 

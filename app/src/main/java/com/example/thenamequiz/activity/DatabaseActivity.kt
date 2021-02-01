@@ -21,7 +21,7 @@ class DatabaseActivity : AppCompatActivity() {
         val binding = ActivityDatabaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val shared = applicationContext as PersonList
+        val personList = applicationContext as PersonList
 
         recyclerView = binding.personList
         //addButton = binding.addbutton
